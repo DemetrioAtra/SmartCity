@@ -57,10 +57,10 @@ namespace DevD.FutureMaterials.Controllers
         // GET: TipoProduto/Edit/5
         public IActionResult Edit(int id)
         {
-            TipoProduto tipo = new TipoProduto()
+            TipoProduto tipo = new()
             {
                 Id = id,
-                Descricao = "Filtro de Água",
+                Descricao = "Descrição do Tipo",
                 Comercializado = false
             };
 
