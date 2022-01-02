@@ -30,6 +30,36 @@ namespace DevD.FutureMaterials.Controllers
                     Logotipo = "Biomass",
                     Ativo = true,
                     Tipo = null
+                },
+                new Produto()
+                {
+                    Id = 3,
+                    Nome = "Tinta Rosa",
+                    Caracteristica = "Sustentável",
+                    PrecoMedio = 800,
+                    Logotipo = "Biomass",
+                    Ativo = false,
+                    Tipo = null
+                },
+                new Produto()
+                {
+                    Id = 4,
+                    Nome = "",
+                    Caracteristica = "Smart",
+                    PrecoMedio = 4000,
+                    Logotipo = "Empresa 1",
+                    Ativo = false,
+                    Tipo = null
+                },
+                new Produto()
+                {
+                    Id = 5,
+                    Nome = "",
+                    Caracteristica = "Sustentável, smart",
+                    PrecoMedio = 5000,
+                    Logotipo = "Empresa 2",
+                    Ativo = true,
+                    Tipo = null
                 }
             };
             return View(lista);

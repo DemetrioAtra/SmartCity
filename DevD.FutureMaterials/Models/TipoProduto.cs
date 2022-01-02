@@ -12,6 +12,7 @@ namespace DevD.FutureMaterials.Models
          Display(Name = "Descrição:")]
         public string? Descricao { get; set; }
 
+        [Display(Name = "Comercializado:")]
         public bool Comercializado { get; set; }
     }
 }

@@ -1,9 +1,11 @@
-﻿using DevD.FutureMaterials.Models;
+﻿using DevD.FutureMaterials.Controllers.Filters;
+using DevD.FutureMaterials.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevD.FutureMaterials.Controllers
 {
+    [LogFilter]
     public class TipoProdutoController : Controller
     {
         // GET: TipoProduto
@@ -50,8 +52,12 @@ namespace DevD.FutureMaterials.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(TipoProduto tipo)
         {
-            if (!ModelState.IsValid) return View(tipo);
-            else return RedirectToAction("Index", "TipoProduto");
+            if (ModelState.IsValid)
+            {
+                TempData["mensagem"] = "Tipo de Produto cadastrado com sucesso!";
+                return RedirectToAction("Index", "TipoProduto");
+            }
+            else return View(tipo);
         }
 
         // GET: TipoProduto/Edit/5
