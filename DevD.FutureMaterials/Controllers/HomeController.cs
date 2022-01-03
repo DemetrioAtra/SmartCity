@@ -1,9 +1,11 @@
-﻿using DevD.FutureMaterials.Models;
+﻿using DevD.FutureMaterials.Controllers.Filters;
+using DevD.FutureMaterials.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace DevD.FutureMaterials.Controllers
 {
+    [LogFilter]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

@@ -11,21 +11,21 @@ namespace DevD.FutureMaterials.Controllers
         // GET: TipoProduto
         public IActionResult Index()
         {
-            IList<TipoProduto> lista = new List<TipoProduto>
+            IList<TipoProdutoModel> lista = new List<TipoProdutoModel>
             {
-                new TipoProduto()
+                new TipoProdutoModel()
                 {
                     Id = 1,
                     Descricao = "Tinta",
                     Comercializado = true
                 },
-                new TipoProduto()
+                new TipoProdutoModel()
                 {
                     Id = 2,
                     Descricao = "Filtro de Água",
                     Comercializado = true
                 },
-                new TipoProduto()
+                new TipoProdutoModel()
                 {
                     Id = 3,
                     Descricao = "Captador de Energia",
@@ -44,13 +44,13 @@ namespace DevD.FutureMaterials.Controllers
         // GET: TipoProduto/Create
         public IActionResult Create()
         {
-            return View(new TipoProduto());
+            return View(new TipoProdutoModel());
         }
 
         // POST: TipoProduto/Create/? (Sobrescrita do método Create)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(TipoProduto tipo)
+        public IActionResult Create(TipoProdutoModel tipo)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace DevD.FutureMaterials.Controllers
         // GET: TipoProduto/Edit/5
         public IActionResult Edit(int id)
         {
-            TipoProduto tipo = new()
+            TipoProdutoModel tipo = new()
             {
                 Id = id,
                 Descricao = "Descrição do Tipo",
@@ -77,7 +77,7 @@ namespace DevD.FutureMaterials.Controllers
         // POST: TipoProduto/Edit/?
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(TipoProduto tipo)
+        public IActionResult Edit(TipoProdutoModel tipo)
         {
             return RedirectToAction("Index", "TipoProduto");
         }

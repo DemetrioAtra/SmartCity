@@ -1,17 +1,19 @@
-﻿using DevD.FutureMaterials.Models;
+﻿using DevD.FutureMaterials.Controllers.Filters;
+using DevD.FutureMaterials.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevD.FutureMaterials.Controllers
 {
+    [LogFilter]
     public class ProdutoController : Controller
     {
         // GET: Produto
         public ActionResult Index()
         {
-            IList<Produto> lista = new List<Produto>
+            IList<ProdutoModel> lista = new List<ProdutoModel>
             {
-                new Produto()
+                new ProdutoModel()
                 {
                     Id = 1,
                     Nome = "Tinta Azul",
@@ -19,9 +21,9 @@ namespace DevD.FutureMaterials.Controllers
                     PrecoMedio = 1000,
                     Logotipo = "Biomass",
                     Ativo = true,
-                    Tipo = null
+                    TipoProduto = null
                 },
-                new Produto()
+                new ProdutoModel()
                 {
                     Id = 2,
                     Nome = "Tinta Vermelha",
@@ -29,9 +31,9 @@ namespace DevD.FutureMaterials.Controllers
                     PrecoMedio = 1000,
                     Logotipo = "Biomass",
                     Ativo = true,
-                    Tipo = null
+                    TipoProduto = null
                 },
-                new Produto()
+                new ProdutoModel()
                 {
                     Id = 3,
                     Nome = "Tinta Rosa",
@@ -39,9 +41,9 @@ namespace DevD.FutureMaterials.Controllers
                     PrecoMedio = 800,
                     Logotipo = "Biomass",
                     Ativo = false,
-                    Tipo = null
+                    TipoProduto = null
                 },
-                new Produto()
+                new ProdutoModel()
                 {
                     Id = 4,
                     Nome = "",
@@ -49,9 +51,9 @@ namespace DevD.FutureMaterials.Controllers
                     PrecoMedio = 4000,
                     Logotipo = "Empresa 1",
                     Ativo = false,
-                    Tipo = null
+                    TipoProduto = null
                 },
-                new Produto()
+                new ProdutoModel()
                 {
                     Id = 5,
                     Nome = "",
@@ -59,7 +61,7 @@ namespace DevD.FutureMaterials.Controllers
                     PrecoMedio = 5000,
                     Logotipo = "Empresa 2",
                     Ativo = true,
-                    Tipo = null
+                    TipoProduto = null
                 }
             };
             return View(lista);

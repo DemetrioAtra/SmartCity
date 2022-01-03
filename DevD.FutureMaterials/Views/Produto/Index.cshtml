@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DevD.FutureMaterials.Models.Produto>
+﻿@model IEnumerable<DevD.FutureMaterials.Models.ProdutoModel>
 
 @{
     ViewData["Title"] = "Produtos";
@@ -7,6 +7,8 @@
 <h1>@ViewData["Title"]</h1>
 
 <a asp-action="Create" asp-controller="Produto">Novo Produto</a>
+<br />
+<br />
 <table>
     <tr>
         <th>Id</th>
@@ -40,7 +42,7 @@
                 <label>@item.Ativo</label>
             </td>
             <td>
-                <label>@item.Tipo</label>
+                <label>@item.TipoProduto</label>
             </td>
             <td>
                 <a asp-action="Details" asp-controller="Produto" asp-route-id="@item.Id">Consultar</a>

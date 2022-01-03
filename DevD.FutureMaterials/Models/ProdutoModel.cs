@@ -2,7 +2,7 @@
 
 namespace DevD.FutureMaterials.Models
 {
-    public class Produto
+    public class ProdutoModel
     {
         public int Id { get; set; }
 
@@ -28,6 +28,6 @@ namespace DevD.FutureMaterials.Models
         [Display(Name = "Ativo:")]
         public bool Ativo { get; set; }
 
-        public TipoProduto? Tipo { get; set; }
+        public TipoProdutoModel? TipoProduto { get; set; }
     }
 }

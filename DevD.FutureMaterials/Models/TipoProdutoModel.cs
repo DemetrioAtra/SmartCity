@@ -2,7 +2,7 @@
 
 namespace DevD.FutureMaterials.Models
 {
-    public class TipoProduto
+    public class TipoProdutoModel
     {
         public int Id { get; set; }
 
@@ -14,5 +14,6 @@ namespace DevD.FutureMaterials.Models
 
         [Display(Name = "Comercializado:")]
         public bool Comercializado { get; set; }
+        public IList<ProdutoModel>? Produtos { get; set; }
     }
 }
