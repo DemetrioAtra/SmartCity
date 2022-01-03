@@ -1,33 +1,29 @@
-﻿@model IEnumerable<DevD.FutureMaterials.Models.ProdutoModel>
+﻿@model IEnumerable<DevD.FutureMaterials.Models.ProductModel>
 
 @{
-    ViewData["Title"] = "Produtos";
+    ViewData["Title"] = "Products";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<a asp-action="Create" asp-controller="Produto">Novo Produto</a>
+<a asp-action="Create" asp-controller="Product">New Product</a>
 <br />
 <br />
 <table>
     <tr>
-        <th>Id</th>
-        <th>Nome</th>
+        <th>Name</th>
         <th>Características</th>
         <th>Preço Médio</th>
         <th>Logotipo</th>
         <th>Ativo</th>
-        <th>Tipo de Produto</th>
+        <th>Category</th>
         <th></th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                <label>@item.Id</label>
-            </td>
-            <td>
-                <label>@item.Nome</label>
+                <label>@item.Name</label>
             </td>
             <td>
                 <label>@item.Caracteristica</label>
@@ -45,9 +41,8 @@
                 <label>@item.TipoProduto</label>
             </td>
             <td>
-                <a asp-action="Details" asp-controller="Produto" asp-route-id="@item.Id">Consultar</a>
-                <a asp-action="Edit" asp-controller="Produto" asp-route-id="@item.Id">Atualizar</a>
-                <a asp-action="Delete" asp-controller="Produto" asp-route-id="@item.Id">Excluir</a>
+                <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
     }

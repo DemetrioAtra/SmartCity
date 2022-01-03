@@ -6,64 +6,64 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevD.FutureMaterials.Controllers
 {
     [LogFilter]
-    public class TipoProdutoController : Controller
+    public class CategoryController : Controller
     {
-        // GET: TipoProduto
+        // GET: Category
         public IActionResult Index()
         {
-            IList<TipoProdutoModel> lista = new List<TipoProdutoModel>
+            IList<CategoryModel> list = new List<CategoryModel>
             {
-                new TipoProdutoModel()
+                new CategoryModel()
                 {
                     Id = 1,
                     Descricao = "Tinta",
                     Comercializado = true
                 },
-                new TipoProdutoModel()
+                new CategoryModel()
                 {
                     Id = 2,
                     Descricao = "Filtro de Água",
                     Comercializado = true
                 },
-                new TipoProdutoModel()
+                new CategoryModel()
                 {
                     Id = 3,
                     Descricao = "Captador de Energia",
                     Comercializado = false
                 }
             };
-            return View(lista);
+            return View(list);
         }
 
-        // GET: TipoProduto/Details/5
+        // GET: Category/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: TipoProduto/Create
+        // GET: Category/Create
         public IActionResult Create()
         {
-            return View(new TipoProdutoModel());
+            return View(new CategoryModel());
         }
 
-        // POST: TipoProduto/Create/? (Sobrescrita do método Create)
+        // POST: Category/Create/? (Sobrescrita do método Create)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(TipoProdutoModel tipo)
+        public IActionResult Create(CategoryModel category)
         {
             if (ModelState.IsValid)
             {
                 TempData["mensagem"] = "Tipo de Produto cadastrado com sucesso!";
                 return RedirectToAction("Index", "TipoProduto");
             }
-            else return View(tipo);
+            else return View(category);
         }
 
-        // GET: TipoProduto/Edit/5
+        // GET: Category/Edit/5
         public IActionResult Edit(int id)
         {
-            TipoProdutoModel tipo = new()
+            CategoryModel tipo = new()
             {
                 Id = id,
                 Descricao = "Descrição do Tipo",
@@ -74,21 +74,21 @@ namespace DevD.FutureMaterials.Controllers
             return View(tipo);
         }
 
-        // POST: TipoProduto/Edit/?
+        // POST: Category/Edit/?
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(TipoProdutoModel tipo)
+        public IActionResult Edit(CategoryModel category)
         {
             return RedirectToAction("Index", "TipoProduto");
         }
 
-        // GET: TipoProduto/Delete/5
+        // GET: Category/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: TipoProduto/Delete/5
+        // POST: Category/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

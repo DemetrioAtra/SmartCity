@@ -6,57 +6,57 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevD.FutureMaterials.Controllers
 {
     [LogFilter]
-    public class ProdutoController : Controller
+    public class ProductController : Controller
     {
-        // GET: Produto
+        // GET: Product
         public ActionResult Index()
         {
-            IList<ProdutoModel> lista = new List<ProdutoModel>
+            IList<ProductModel> list = new List<ProductModel>
             {
-                new ProdutoModel()
+                new ProductModel()
                 {
                     Id = 1,
-                    Nome = "Tinta Azul",
+                    Name = "Tinta Azul",
                     Caracteristica = "Sustentável, smart",
                     PrecoMedio = 1000,
                     Logotipo = "Biomass",
                     Ativo = true,
                     TipoProduto = null
                 },
-                new ProdutoModel()
+                new ProductModel()
                 {
                     Id = 2,
-                    Nome = "Tinta Vermelha",
+                    Name = "Tinta Vermelha",
                     Caracteristica = "Sustentável, smart",
                     PrecoMedio = 1000,
                     Logotipo = "Biomass",
                     Ativo = true,
                     TipoProduto = null
                 },
-                new ProdutoModel()
+                new ProductModel()
                 {
                     Id = 3,
-                    Nome = "Tinta Rosa",
+                    Name = "Tinta Rosa",
                     Caracteristica = "Sustentável",
                     PrecoMedio = 800,
                     Logotipo = "Biomass",
                     Ativo = false,
                     TipoProduto = null
                 },
-                new ProdutoModel()
+                new ProductModel()
                 {
                     Id = 4,
-                    Nome = "",
+                    Name = "",
                     Caracteristica = "Smart",
                     PrecoMedio = 4000,
                     Logotipo = "Empresa 1",
                     Ativo = false,
                     TipoProduto = null
                 },
-                new ProdutoModel()
+                new ProductModel()
                 {
                     Id = 5,
-                    Nome = "",
+                    Name = "",
                     Caracteristica = "Sustentável, smart",
                     PrecoMedio = 5000,
                     Logotipo = "Empresa 2",
@@ -64,22 +64,22 @@ namespace DevD.FutureMaterials.Controllers
                     TipoProduto = null
                 }
             };
-            return View(lista);
+            return View(list);
         }
 
-        // GET: Produto/Details/5
+        // GET: Product/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Produto/Create
+        // GET: Product/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Produto/Create
+        // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -94,13 +94,13 @@ namespace DevD.FutureMaterials.Controllers
             }
         }
 
-        // GET: Produto/Edit/5
+        // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Produto/Edit/5
+        // POST: Product/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -115,13 +115,13 @@ namespace DevD.FutureMaterials.Controllers
             }
         }
 
-        // GET: Produto/Delete/5
+        // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Produto/Delete/5
+        // POST: Product/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

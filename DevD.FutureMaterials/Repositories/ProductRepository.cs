@@ -2,20 +2,20 @@
 
 namespace DevD.FutureMaterials.Repositories
 {
-    public class ProdutoRepository
+    public class ProductRepository
     {
         public void Inserir()
         {
         }
-        public IList<ProdutoModel>? Listar()
+        public IList<ProductModel>? Listar()
         {
             return null;
         }
-        public ProdutoModel? Consultar(int id)
+        public ProductModel? Consultar(int id)
         {
             return null;
         }
-        public void Alterar(ProdutoModel produto)
+        public void Alterar(ProductModel produto)
         {
         }
         public void Excluir(int id)
