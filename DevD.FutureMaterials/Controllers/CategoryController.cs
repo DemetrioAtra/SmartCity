@@ -16,20 +16,20 @@ namespace DevD.FutureMaterials.Controllers
                 new CategoryModel()
                 {
                     Id = 1,
-                    Descricao = "Tinta",
-                    Comercializado = true
+                    Description = "Tinta",
+                    Marketed = true
                 },
                 new CategoryModel()
                 {
                     Id = 2,
-                    Descricao = "Filtro de Água",
-                    Comercializado = true
+                    Description = "Filtro de Água",
+                    Marketed = true
                 },
                 new CategoryModel()
                 {
                     Id = 3,
-                    Descricao = "Captador de Energia",
-                    Comercializado = false
+                    Description = "Captador de Energia",
+                    Marketed = false
                 }
             };
             return View(list);
@@ -47,7 +47,7 @@ namespace DevD.FutureMaterials.Controllers
             return View(new CategoryModel());
         }
 
-        // POST: Category/Create/? (Sobrescrita do método Create)
+        // POST: Category/Create (Sobrescrita do método Create)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(CategoryModel category)
@@ -66,15 +66,15 @@ namespace DevD.FutureMaterials.Controllers
             CategoryModel tipo = new()
             {
                 Id = id,
-                Descricao = "Descrição do Tipo",
-                Comercializado = false
+                Description = "Descrição do Tipo",
+                Marketed = false
             };
 
 
             return View(tipo);
         }
 
-        // POST: Category/Edit/?
+        // POST: Category/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(CategoryModel category)

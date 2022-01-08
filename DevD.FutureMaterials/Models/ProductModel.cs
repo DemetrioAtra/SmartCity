@@ -1,32 +1,40 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DevD.FutureMaterials.Models
 {
+    [Table("PRODUCT")]
     public class ProductModel
     {
-        [Key]
+        [Key,
+         Column("")]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Required!"),
-         Display(Name = "")]
+        [Column(""),
+         Display(Name = "Name:"),
+         Required(ErrorMessage = "Required!")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "Required!"),
-         Display(Name = "")]
-        public string? Caracteristica { get; set; }
+        [Column(""),
+         Display(Name = "Characteristics:"),
+         Required(ErrorMessage = "Required!")]
+        public string? Characteristics { get; set; }
 
-        [Required(ErrorMessage = "Required!"),
-         Display(Name = "")]
-        public double PrecoMedio { get; set; }
+        [Column(""),
+         Display(Name = "Midium Price:"),
+         Required(ErrorMessage = "Required!")]
+        public double MidPrice { get; set; }
 
-        [Required(ErrorMessage = "Required!"),
-         Display(Name = "")]
-        public string? Logotipo { get; set; }
+        [Column(""),
+         Display(Name = "Logo:"),
+         Required(ErrorMessage = "Required!")]
+        public string? Logo { get; set; }
 
-        [Required(ErrorMessage = "Required!"),
-         Display(Name = "")]
-        public bool Ativo { get; set; }
+        [Column(""),
+         Display(Name = "Active:"),
+         Required(ErrorMessage = "Required!")]
+        public bool Active { get; set; }
 
-        public CategoryModel? TipoProduto { get; set; }
+        public CategoryModel? Category { get; set; }
     }
 }
