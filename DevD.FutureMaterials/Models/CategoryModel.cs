@@ -7,17 +7,14 @@ namespace DevD.FutureMaterials.Models
     public class CategoryModel
     {
         [Key,
-         Column("")]
+         Column("CATEGORYID")]
         public int Id { get; set; }
 
-        [Column(""),
-         Display(Name = "Description:"),
-         Required(ErrorMessage = "Required!")]
+        [Column("DESCRIPTION"),
+         Required(ErrorMessage = "The description field is required.")]
         public string? Description { get; set; }
 
-        [Column(""),
-         Display(Name = "Marketed:"),
-         Required(ErrorMessage = "Required!")]
+        [Column("MARKETED")]
         public bool Marketed { get; set; }
 
         public int DisplayOrder { get; set; }

@@ -17,7 +17,7 @@ namespace DevD.FutureMaterials.Controllers
                 {
                     Id = 1,
                     Name = "Tinta Azul",
-                    Characteristics = "Sustentável, smart",
+                    Characteristic = "Sustentável, smart",
                     MidPrice = 1000,
                     Logo = "Biomass",
                     Active = true,
@@ -26,7 +26,7 @@ namespace DevD.FutureMaterials.Controllers
                 {
                     Id = 2,
                     Name = "Tinta Vermelha",
-                    Characteristics = "Sustentável, smart",
+                    Characteristic = "Sustentável, smart",
                     MidPrice = 1000,
                     Logo = "Biomass",
                     Active = true,
@@ -35,7 +35,7 @@ namespace DevD.FutureMaterials.Controllers
                 {
                     Id = 3,
                     Name = "Tinta Rosa",
-                    Characteristics = "Sustentável",
+                    Characteristic = "Sustentável",
                     MidPrice = 800,
                     Logo = "Biomass",
                     Active = false,
@@ -44,7 +44,7 @@ namespace DevD.FutureMaterials.Controllers
                 {
                     Id = 4,
                     Name = "",
-                    Characteristics = "Smart",
+                    Characteristic = "Smart",
                     MidPrice = 4000,
                     Logo = "Empresa 1",
                     Active = false,
@@ -53,7 +53,7 @@ namespace DevD.FutureMaterials.Controllers
                 {
                     Id = 5,
                     Name = "",
-                    Characteristics = "Sustentável, smart",
+                    Characteristic = "Sustentável, smart",
                     MidPrice = 5000,
                     Logo = "Empresa 2",
                     Active = true,

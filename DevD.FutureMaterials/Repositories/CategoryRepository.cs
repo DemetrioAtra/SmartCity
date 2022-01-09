@@ -4,21 +4,21 @@ namespace DevD.FutureMaterials.Repositories
 {
     public class CategoryRepository
     {
-        public void Inserir()
+        public void Create(CategoryModel category)
         {
         }
-        public IList<CategoryModel>? Listar()
-        {
-            return null;
-        }
-        public CategoryModel? Consultar(int id)
+        public IList<CategoryModel>? ReadAll()
         {
             return null;
         }
-        public void Alterar(CategoryModel tipoProduto)
+        public CategoryModel? Read(int id)
+        {
+            return null;
+        }
+        public void Update(CategoryModel category)
         {
         }
-        public void Excluir(int id)
+        public void Delete(int id)
         {
         }
     }

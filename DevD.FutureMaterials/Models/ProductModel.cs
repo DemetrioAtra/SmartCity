@@ -7,32 +7,28 @@ namespace DevD.FutureMaterials.Models
     public class ProductModel
     {
         [Key,
-         Column("")]
+         Column("PRODUCTID")]
         public int Id { get; set; }
 
-        [Column(""),
-         Display(Name = "Name:"),
-         Required(ErrorMessage = "Required!")]
+        [Column("NAME"),
+         Required(ErrorMessage = "The name field is required.")]
         public string? Name { get; set; }
 
-        [Column(""),
-         Display(Name = "Characteristics:"),
-         Required(ErrorMessage = "Required!")]
-        public string? Characteristics { get; set; }
+        [Column("CHARACTERISTICS"),
+         Display(Name = "Characteristics"),
+         Required(ErrorMessage = "The characteristics field is required.")]
+        public string? Characteristic { get; set; }
 
-        [Column(""),
-         Display(Name = "Midium Price:"),
-         Required(ErrorMessage = "Required!")]
+        [Column("MIDPRICE"),
+         Display(Name = "Midium price"),
+         Required(ErrorMessage = "The midium price field is required.")]
         public double MidPrice { get; set; }
 
-        [Column(""),
-         Display(Name = "Logo:"),
-         Required(ErrorMessage = "Required!")]
+        [Column("LOGO"),
+         Required(ErrorMessage = "The logo field is required.")]
         public string? Logo { get; set; }
 
-        [Column(""),
-         Display(Name = "Active:"),
-         Required(ErrorMessage = "Required!")]
+        [Column("ACTIVE")]
         public bool Active { get; set; }
 
         public CategoryModel? Category { get; set; }

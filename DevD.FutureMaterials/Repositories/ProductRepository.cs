@@ -4,21 +4,21 @@ namespace DevD.FutureMaterials.Repositories
 {
     public class ProductRepository
     {
-        public void Inserir()
+        public void Create(ProductModel product)
         {
         }
-        public IList<ProductModel>? Listar()
-        {
-            return null;
-        }
-        public ProductModel? Consultar(int id)
+        public IList<ProductModel>? ReadAll()
         {
             return null;
         }
-        public void Alterar(ProductModel produto)
+        public ProductModel? Read(int id)
+        {
+            return null;
+        }
+        public void Update(ProductModel product)
         {
         }
-        public void Excluir(int id)
+        public void Delete(int id)
         {
         }
     }

@@ -54,8 +54,8 @@ namespace DevD.FutureMaterials.Controllers
         {
             if (ModelState.IsValid)
             {
-                TempData["mensagem"] = "Tipo de Produto cadastrado com sucesso!";
-                return RedirectToAction("Index", "TipoProduto");
+                TempData["message"] = "Success!";
+                return RedirectToAction("Index", "Category");
             }
             else return View(category);
         }
@@ -66,7 +66,7 @@ namespace DevD.FutureMaterials.Controllers
             CategoryModel tipo = new()
             {
                 Id = id,
-                Description = "Descrição do Tipo",
+                Description = "Description...",
                 Marketed = false
             };
 
@@ -79,7 +79,7 @@ namespace DevD.FutureMaterials.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(CategoryModel category)
         {
-            return RedirectToAction("Index", "TipoProduto");
+            return RedirectToAction("Index", "Category");
         }
 
         // GET: Category/Delete/5
