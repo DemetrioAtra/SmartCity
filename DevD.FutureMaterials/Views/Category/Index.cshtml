@@ -17,6 +17,7 @@
 }
 <table>
     <tr>
+        <th>Display Order</th>
         <th>Description</th>
         <th>Marketed</th>
         <th></th>
@@ -25,14 +26,17 @@
     {
         <tr>
             <td>
+                <label>@item.DisplayOrder</label>
+            </td>
+            <td>
                 <label><a>@item.Description</a></label>
             </td>
             <td>
                 <label>@item.Marketed</label>
             </td>
             <td>
-                <a asp-action="Edit" asp-controller="Category" asp-route-id="@item.Id">Edit</a>
-                <a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-controller="Category" asp-route-id="@item.CategoryId">Edit</a>
+                <a asp-action="Delete" asp-controller="Category" asp-route-id="@item.CategoryId">Delete</a>
             </td>
         </tr>
     }

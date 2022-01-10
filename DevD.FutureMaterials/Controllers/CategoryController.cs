@@ -1,5 +1,6 @@
 ﻿using DevD.FutureMaterials.Controllers.Filters;
 using DevD.FutureMaterials.Models;
+using DevD.FutureMaterials.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,38 +9,17 @@ namespace DevD.FutureMaterials.Controllers
     [LogFilter]
     public class CategoryController : Controller
     {
-        // GET: Category
-        public IActionResult Index()
+        private readonly CategoryRepository _categoryRepository;
+        public CategoryController(CategoryRepository categoryRepository)
         {
-            IList<CategoryModel> list = new List<CategoryModel>
-            {
-                new CategoryModel()
-                {
-                    Id = 1,
-                    Description = "Tinta",
-                    Marketed = true
-                },
-                new CategoryModel()
-                {
-                    Id = 2,
-                    Description = "Filtro de Água",
-                    Marketed = true
-                },
-                new CategoryModel()
-                {
-                    Id = 3,
-                    Description = "Captador de Energia",
-                    Marketed = false
-                }
-            };
-            return View(list);
+            _categoryRepository = categoryRepository;
         }
 
+        // GET: Category
+        public IActionResult Index() => View(_categoryRepository.ReadAll());
+
         // GET: Category/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        public ActionResult Details(int id) => View(_categoryRepository.Read(id));
 
         // GET: Category/Create
         public IActionResult Create()
@@ -65,7 +45,7 @@ namespace DevD.FutureMaterials.Controllers
         {
             CategoryModel tipo = new()
             {
-                Id = id,
+                CategoryId = id,
                 Description = "Description...",
                 Marketed = false
             };

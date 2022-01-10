@@ -1,5 +1,6 @@
 ﻿using DevD.FutureMaterials.Controllers.Filters;
 using DevD.FutureMaterials.Models;
+using DevD.FutureMaterials.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,64 +9,22 @@ namespace DevD.FutureMaterials.Controllers
     [LogFilter]
     public class ProductController : Controller
     {
+        private readonly ProductRepository _productRepository;
+        public ProductController(ProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         // GET: Product
         public ActionResult Index()
         {
-            IList<ProductModel> list = new List<ProductModel>
-            {
-                new ProductModel()
-                {
-                    Id = 1,
-                    Name = "Tinta Azul",
-                    Characteristic = "Sustentável, smart",
-                    MidPrice = 1000,
-                    Logo = "Biomass",
-                    Active = true,
-                },
-                new ProductModel()
-                {
-                    Id = 2,
-                    Name = "Tinta Vermelha",
-                    Characteristic = "Sustentável, smart",
-                    MidPrice = 1000,
-                    Logo = "Biomass",
-                    Active = true,
-                },
-                new ProductModel()
-                {
-                    Id = 3,
-                    Name = "Tinta Rosa",
-                    Characteristic = "Sustentável",
-                    MidPrice = 800,
-                    Logo = "Biomass",
-                    Active = false,
-                },
-                new ProductModel()
-                {
-                    Id = 4,
-                    Name = "",
-                    Characteristic = "Smart",
-                    MidPrice = 4000,
-                    Logo = "Empresa 1",
-                    Active = false,
-                },
-                new ProductModel()
-                {
-                    Id = 5,
-                    Name = "",
-                    Characteristic = "Sustentável, smart",
-                    MidPrice = 5000,
-                    Logo = "Empresa 2",
-                    Active = true,
-                }
-            };
-            return View(list);
+            return View(_productRepository.ReadAll());
         }
 
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(_productRepository.Read(id));
         }
 
         // GET: Product/Create
